@@ -1,0 +1,123 @@
+date,files_present,hours_with_aquifer_wet_cells,observed_wet_cell_records,sum_observed_values,max_observed_value,hourly_mean_wet_cell_value,hours_without_illinois_file,data_warning
+2026-06-20,18,10,6764,170.58500143140554,0.5630000233650208,0.026818707272607916,6,Sparse positive observations; unobserved cells not yet classified
+2026-06-21,17,14,72103,10490.844998864457,0.9570000171661377,0.09497325494801721,7,Sparse positive observations; unobserved cells not yet classified
+2026-06-22,24,10,26707,1198.2790053337812,0.6769999861717224,0.03609269510534895,0,Sparse positive observations; unobserved cells not yet classified
+2026-06-23,4,0,0,0.0,,,20,Sparse positive observations; unobserved cells not yet classified
+2026-06-24,21,10,8871,831.9480009805411,0.8899999856948853,0.0838169047949985,3,Sparse positive observations; unobserved cells not yet classified
+2026-06-25,24,18,17505,3503.3930008467287,1.3860000371932983,0.11590871898386422,0,Sparse positive observations; unobserved cells not yet classified
+2026-06-26,24,23,82539,3527.337014004588,0.6970000267028809,0.037721831078173916,0,Sparse positive observations; unobserved cells not yet classified
+2026-06-27,24,24,52889,2833.5940083470196,1.3660000562667847,0.0420747909686483,0,Sparse positive observations; unobserved cells not yet classified
+2026-06-28,24,13,1754,41.452000388875604,0.15700000524520874,0.027682753963044933,0,Sparse positive observations; unobserved cells not yet classified
+2026-06-29,4,0,0,0.0,,,20,Sparse positive observations; unobserved cells not yet classified
+2026-06-30,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-07-01,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-07-02,10,5,2452,210.73700002208352,0.5429999828338623,0.08105316662672497,14,Sparse positive observations; unobserved cells not yet classified
+2026-07-03,22,9,331,12.628000013530254,0.1420000046491623,0.0492275271474504,2,Sparse positive observations; unobserved cells not yet classified
+2026-07-04,24,21,57062,11838.411003824323,2.0350000858306885,0.13486898383827942,0,Sparse positive observations; unobserved cells not yet classified
+2026-07-05,24,7,2812,248.5840003248304,0.546999990940094,0.04189380027746019,0,Sparse positive observations; unobserved cells not yet classified
+2026-07-06,22,9,4546,282.6950005479157,0.8500000238418579,0.0472211943394955,2,Sparse positive observations; unobserved cells not yet classified
+2026-07-07,12,2,179,4.734000051394105,0.12999999523162842,0.021252809510974403,12,Sparse positive observations; unobserved cells not yet classified
+2026-07-08,22,5,5,0.19400000385940075,0.07100000232458115,0.03880000077188015,2,Sparse positive observations; unobserved cells not yet classified
+2026-07-09,23,13,1676,229.68100023269653,1.5,0.09029678524709416,1,Sparse positive observations; unobserved cells not yet classified
+2026-07-10,23,14,6117,989.8499999605119,1.9570000171661377,0.09417526729931651,1,Sparse positive observations; unobserved cells not yet classified
+2026-07-11,24,24,58939,5889.570006731898,1.8980000019073486,0.10007213916575296,0,Sparse positive observations; unobserved cells not yet classified
+2026-07-12,16,3,118,2.6230000238865614,0.08699999749660492,0.01891895519707332,8,Sparse positive observations; unobserved cells not yet classified
+2026-07-13,4,0,0,0.0,,,20,Sparse positive observations; unobserved cells not yet classified
+2026-07-14,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-07-15,12,0,0,0.0,,,12,Sparse positive observations; unobserved cells not yet classified
+2026-07-16,19,3,69,3.436000019311905,0.2680000066757202,0.03989885107282249,5,Sparse positive observations; unobserved cells not yet classified
+2026-07-17,24,17,5552,419.91700075007975,0.8500000238418579,0.05894910451270777,0,Sparse positive observations; unobserved cells not yet classified
+2026-07-18,18,14,6491,882.6549997162074,1.121999979019165,0.10771859979645236,6,Sparse positive observations; unobserved cells not yet classified
+2026-07-19,24,5,11392,1878.8720012959093,0.9879999756813049,0.11743011660408964,0,Sparse positive observations; unobserved cells not yet classified
+2026-07-20,16,5,2883,75.298000799492,0.15700000524520874,0.021805434213145042,8,Sparse positive observations; unobserved cells not yet classified
+2026-07-21,23,12,18763,813.7800028547645,0.6060000061988831,0.041785043244335816,1,Sparse positive observations; unobserved cells not yet classified
+2026-07-22,1,1,1,0.01600000075995922,0.01600000075995922,0.01600000075995922,23,Sparse positive observations; unobserved cells not yet classified
+2026-07-23,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-07-24,15,7,3507,88.78600051440299,0.11800000071525574,0.019532187156136437,9,Sparse positive observations; unobserved cells not yet classified
+2026-07-25,23,14,4634,105.12600111030042,0.1459999978542328,0.037014765689811734,1,Sparse positive observations; unobserved cells not yet classified
+2026-07-26,12,1,1,0.01600000075995922,0.01600000075995922,0.01600000075995922,12,Sparse positive observations; unobserved cells not yet classified
+2026-07-27,24,11,10356,1040.6640012245625,1.6649999618530273,0.05404648468044947,0,Sparse positive observations; unobserved cells not yet classified
+2026-07-28,8,5,1444,293.24500058963895,1.503999948501587,0.1336331358263539,16,Sparse positive observations; unobserved cells not yet classified
+2026-07-29,3,1,1,0.024000000208616257,0.024000000208616257,0.024000000208616257,21,Sparse positive observations; unobserved cells not yet classified
+2026-07-30,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-07-31,18,14,46434,1948.2040088642389,0.5979999899864197,0.039744872634669796,6,Sparse positive observations; unobserved cells not yet classified
+2026-08-01,24,24,100966,12315.559009032324,1.972000002861023,0.09822155025610445,0,Sparse positive observations; unobserved cells not yet classified
+2026-08-02,21,10,34967,2744.854003785178,0.9490000009536743,0.06398686030982693,3,Sparse positive observations; unobserved cells not yet classified
+2026-08-03,2,0,0,0.0,,,22,Sparse positive observations; unobserved cells not yet classified
+2026-08-04,3,1,1,0.054999999701976776,0.054999999701976776,0.054999999701976776,21,Sparse positive observations; unobserved cells not yet classified
+2026-08-05,24,20,19433,1328.9930015206337,0.6299999952316284,0.033575273008956824,0,Sparse positive observations; unobserved cells not yet classified
+2026-08-06,24,22,37597,2224.154005965218,0.906000018119812,0.04371321702318886,0,Sparse positive observations; unobserved cells not yet classified
+2026-08-07,23,10,258,5.809000043198466,0.06700000166893005,0.019355914655860736,1,Sparse positive observations; unobserved cells not yet classified
+2026-08-08,13,5,172,12.326999958604574,0.29499998688697815,0.03676699339613026,11,Sparse positive observations; unobserved cells not yet classified
+2026-08-09,12,6,1411,28.977000350132585,0.3230000138282776,0.02377767686430617,12,Sparse positive observations; unobserved cells not yet classified
+2026-08-10,24,17,5010,790.6010000705719,1.4329999685287476,0.08592912569185072,0,Sparse positive observations; unobserved cells not yet classified
+2026-08-11,22,14,11312,2167.3199988435954,0.906000018119812,0.07467707547307681,2,Sparse positive observations; unobserved cells not yet classified
+2026-08-12,21,14,50020,4105.100005688146,0.8460000157356262,0.055459619140456336,3,Sparse positive observations; unobserved cells not yet classified
+2026-08-13,24,12,17695,5074.757998583838,1.8029999732971191,0.10960838041705019,0,Sparse positive observations; unobserved cells not yet classified
+2026-08-14,24,23,100401,24520.93000234291,3.0160000324249268,0.17833669974768143,0,Sparse positive observations; unobserved cells not yet classified
+2026-08-15,24,22,111563,27903.84799353406,1.909000039100647,0.1551419648549708,0,Sparse positive observations; unobserved cells not yet classified
+2026-08-16,24,22,42507,2931.2220053970814,1.027999997138977,0.0665241338335411,0,Sparse positive observations; unobserved cells not yet classified
+2026-08-17,15,11,13138,827.6640020981431,1.2130000591278076,0.040980752164249935,9,Sparse positive observations; unobserved cells not yet classified
+2026-08-18,10,3,3,0.10700000263750553,0.07100000232458115,0.035666667545835175,14,Sparse positive observations; unobserved cells not yet classified
+2026-08-19,24,17,5275,628.9030003044754,2.0309998989105225,0.05969582132756135,0,Sparse positive observations; unobserved cells not yet classified
+2026-08-20,22,13,33659,8045.353001462296,2.625999927520752,0.14465191535197375,2,Sparse positive observations; unobserved cells not yet classified
+2026-08-21,18,7,250,15.303000072017312,0.33500000834465027,0.0749152794926767,6,Sparse positive observations; unobserved cells not yet classified
+2026-08-22,19,13,15145,2182.578001284972,0.7599999904632568,0.09003451124678855,5,Sparse positive observations; unobserved cells not yet classified
+2026-08-23,7,1,212,14.576000083237886,0.24400000274181366,0.06875471737376361,17,Sparse positive observations; unobserved cells not yet classified
+2026-08-24,6,1,1,0.019999999552965164,0.019999999552965164,0.019999999552965164,18,Sparse positive observations; unobserved cells not yet classified
+2026-08-25,5,2,2,0.055000001564621925,0.039000000804662704,0.027500000782310963,19,Sparse positive observations; unobserved cells not yet classified
+2026-08-26,16,10,6935,974.3930002115667,1.0240000486373901,0.07828921764434567,8,Sparse positive observations; unobserved cells not yet classified
+2026-08-27,9,1,1,0.054999999701976776,0.054999999701976776,0.054999999701976776,15,Sparse positive observations; unobserved cells not yet classified
+2026-08-28,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-08-29,9,3,1788,33.420000456273556,0.054999999701976776,0.01907889695833717,15,Sparse positive observations; unobserved cells not yet classified
+2026-08-30,24,18,10617,351.89500230178237,0.37400001287460327,0.03208810062047129,0,Sparse positive observations; unobserved cells not yet classified
+2026-08-31,24,17,1803,38.03400041908026,0.2680000066757202,0.03354880147375075,0,Sparse positive observations; unobserved cells not yet classified
+2026-09-01,19,1,1,0.01600000075995922,0.01600000075995922,0.01600000075995922,5,Sparse positive observations; unobserved cells not yet classified
+2026-09-02,9,2,10,0.16800000332295895,0.02800000086426735,0.016800000332295895,15,Sparse positive observations; unobserved cells not yet classified
+2026-09-03,22,5,299,24.440999982878566,0.29100000858306885,0.035912217732815596,2,Sparse positive observations; unobserved cells not yet classified
+2026-09-04,21,3,39,3.190999995917082,0.1770000010728836,0.03793333336001351,3,Sparse positive observations; unobserved cells not yet classified
+2026-09-05,19,9,552,19.956000113859773,0.2280000001192093,0.027309328689876643,5,Sparse positive observations; unobserved cells not yet classified
+2026-09-06,3,0,0,0.0,,,21,Sparse positive observations; unobserved cells not yet classified
+2026-09-07,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-09-08,7,0,0,0.0,,,17,Sparse positive observations; unobserved cells not yet classified
+2026-09-09,24,18,21502,716.7840034719557,0.6729999780654907,0.04763521781943705,0,Sparse positive observations; unobserved cells not yet classified
+2026-09-10,24,17,42249,2180.5260080154985,0.8980000019073486,0.04040340856026633,0,Sparse positive observations; unobserved cells not yet classified
+2026-09-11,23,2,32,0.7150000017136335,0.10599999874830246,0.025789855088552704,1,Sparse positive observations; unobserved cells not yet classified
+2026-09-12,17,4,52,1.830000014975667,0.09099999815225601,0.019684524006498533,7,Sparse positive observations; unobserved cells not yet classified
+2026-09-13,12,4,1542,37.3870003297925,0.1379999965429306,0.03536633044063311,12,Sparse positive observations; unobserved cells not yet classified
+2026-09-14,14,6,447,8.168000109493732,0.16099999845027924,0.03574108819416876,10,Sparse positive observations; unobserved cells not yet classified
+2026-09-15,22,8,6144,840.2150003071874,0.8230000138282776,0.08261796812613974,2,Sparse positive observations; unobserved cells not yet classified
+2026-09-16,24,22,79135,13826.929006604478,1.4450000524520874,0.12066529068143343,0,Sparse positive observations; unobserved cells not yet classified
+2026-09-17,24,17,2149,150.37200008705258,0.6420000195503235,0.08760635515875487,0,Sparse positive observations; unobserved cells not yet classified
+2026-09-18,23,16,19728,1734.4770024381578,0.8149999976158142,0.06596194230036513,1,Sparse positive observations; unobserved cells not yet classified
+2026-09-19,23,17,12017,1701.7720016036183,1.0709999799728394,0.05623689764245228,1,Sparse positive observations; unobserved cells not yet classified
+2026-09-20,24,19,35716,2057.7860049009323,0.4090000092983246,0.044130302376692444,0,Sparse positive observations; unobserved cells not yet classified
+2026-09-21,25,19,22289,1500.4720024988055,0.6729999780654907,0.04972076037655902,-1,Sparse positive observations; unobserved cells not yet classified
+2026-09-22,24,10,273,4.825000071898103,0.08699999749660492,0.025484921483657295,0,Sparse positive observations; unobserved cells not yet classified
+2026-09-23,6,2,3,0.20100000128149986,0.11800000071525574,0.05525000020861626,18,Sparse positive observations; unobserved cells not yet classified
+2026-09-24,1,0,0,0.0,,,23,Sparse positive observations; unobserved cells not yet classified
+2026-09-25,21,12,10501,245.05400218442082,0.20900000631809235,0.025951678341227222,3,Sparse positive observations; unobserved cells not yet classified
+2026-09-26,20,9,382,7.961000073701143,0.33899998664855957,0.0645384439565758,4,Sparse positive observations; unobserved cells not yet classified
+2026-09-27,23,6,111,1.9540000259876251,0.039000000804662704,0.019228153930918354,1,Sparse positive observations; unobserved cells not yet classified
+2026-09-28,5,1,1,0.06700000166893005,0.06700000166893005,0.06700000166893005,19,Sparse positive observations; unobserved cells not yet classified
+2026-09-29,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-09-30,23,19,43676,1295.0340092089027,0.29899999499320984,0.026289416087281393,1,Sparse positive observations; unobserved cells not yet classified
+2026-10-01,24,23,15254,487.8080032337457,0.8700000047683716,0.03379098185361633,0,Sparse positive observations; unobserved cells not yet classified
+2026-10-02,24,12,57787,7585.740002123639,0.906000018119812,0.09282918269726148,0,Sparse positive observations; unobserved cells not yet classified
+2026-10-03,1,0,0,0.0,,,23,Sparse positive observations; unobserved cells not yet classified
+2026-10-04,7,0,0,0.0,,,17,Sparse positive observations; unobserved cells not yet classified
+2026-10-05,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-10-06,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-10-07,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-10-08,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-10-09,13,9,6631,225.6420007739216,0.20900000631809235,0.028615394871597685,11,Sparse positive observations; unobserved cells not yet classified
+2026-10-10,1,0,0,0.0,,,23,Sparse positive observations; unobserved cells not yet classified
+2026-10-11,4,0,0,0.0,,,20,Sparse positive observations; unobserved cells not yet classified
+2026-10-12,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-10-13,15,8,6656,305.2130011115223,0.4059999883174896,0.05130057354454438,9,Sparse positive observations; unobserved cells not yet classified
+2026-10-14,24,15,14340,1622.5340008903295,0.8109999895095825,0.05406963211142481,0,Sparse positive observations; unobserved cells not yet classified
+2026-10-15,19,16,27674,1036.997004557401,0.29100000858306885,0.02751567477352694,5,Sparse positive observations; unobserved cells not yet classified
+2026-10-16,24,20,35583,1258.1460071280599,0.8500000238418579,0.04046389252714223,0,Sparse positive observations; unobserved cells not yet classified
+2026-10-17,13,2,683,14.138000156730413,0.08699999749660492,0.023415681524651698,11,Sparse positive observations; unobserved cells not yet classified
+2026-10-18,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established
+2026-10-19,0,0,0,,,,24,No Illinois files this date; dry versus unavailable not established

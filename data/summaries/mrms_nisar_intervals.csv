@@ -1,0 +1,9 @@
+from_utc,to_utc,time_basis,included_complete_hours,hours_without_file,provisional_sum_raw,provisional_mm,all_hours_have_files
+2026-07-02T00:00:00+00:00,2026-07-14T00:00:00+00:00,UTC midnight proxies (NOT acquisition times),288,62,1.781478461415688,,False
+2026-07-14T00:00:00+00:00,2026-07-26T00:00:00+00:00,UTC midnight proxies (NOT acquisition times),288,112,0.385734178845229,,False
+2026-07-26T00:00:00+00:00,2026-08-19T00:00:00+00:00,UTC midnight proxies (NOT acquisition times),576,177,8.155313147327556,,False
+2026-08-19T00:00:00+00:00,2026-08-31T00:00:00+00:00,UTC midnight proxies (NOT acquisition times),288,129,1.1071987747789536,,False
+2026-08-31T00:00:00+00:00,2026-09-12T00:00:00+00:00,UTC midnight proxies (NOT acquisition times),288,93,0.2696289896705958,,False
+2026-09-12T00:00:00+00:00,2026-09-24T00:00:00+00:00,UTC midnight proxies (NOT acquisition times),288,52,1.974955449145169,,False
+2026-09-24T00:00:00+00:00,2026-10-06T00:00:00+00:00,UTC midnight proxies (NOT acquisition times),288,139,0.8697061524258669,,False
+2026-10-06T00:00:00+00:00,2026-10-18T00:00:00+00:00,UTC midnight proxies (NOT acquisition times),288,175,0.40340843818008476,,False

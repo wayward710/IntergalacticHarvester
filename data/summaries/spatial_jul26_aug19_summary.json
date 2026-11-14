@@ -1,0 +1,14 @@
+{
+  "start_utc": "2026-07-26T00:50:41+00:00",
+  "end_utc": "2026-08-19T00:50:40+00:00",
+  "mrms_hours_with_file": 399,
+  "mrms_hours_without_file": 176,
+  "mrms_units_assumed": "in",
+  "missing_hour_assumption": "zero, not validated",
+  "mrms_grid_cells_inside_aquifer": 11064,
+  "matched_mrms_cells": 6710,
+  "nisar_common_pixels": 137553,
+  "matched_nisar_pixels": 137532,
+  "nisar_mean_change_m3_m3": 0.06824864447116852,
+  "pearson_r_mrms_cell_level": -0.053708588937534586
+}

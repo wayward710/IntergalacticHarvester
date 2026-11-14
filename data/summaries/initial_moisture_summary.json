@@ -1,0 +1,12 @@
+{
+  "nisar_pixels": 137553,
+  "initial_mean": 0.1741030701952073,
+  "final_mean": 0.24235171050316018,
+  "change_mean": 0.06824864030795288,
+  "fraction_wetter": 0.9929263629291982,
+  "initial_change_pearson_r_pixels_coupled": -0.5922307283477638,
+  "initial_final_pearson_r_pixels": 0.5977088055902688,
+  "matched_mrms_cells": 6710,
+  "initial_change_pearson_r_cells_coupled": -0.648636958696887,
+  "initial_final_pearson_r_cells": 0.6201274752019713
+}

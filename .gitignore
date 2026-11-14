@@ -1,0 +1,31 @@
+# Node / Vite
+node_modules/
+dist/
+.vite/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Large source datasets (keep on Drive / cloud storage)
+*.h5
+*.hdf5
+*.parquet
+telemetry_2026.csv
+
+# Generated geospatial rasters (keep production COGs in object storage)
+*.tif
+*.tiff
+*.vrt
+*.aux.xml
+
+# Local configuration & OS files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.vscode/
