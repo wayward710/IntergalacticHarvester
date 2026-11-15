@@ -1,6 +1,7 @@
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,Arial,sans-serif;color:#172a38}.app{height:100vh;display:flex;flex-direction:column}header{padding:14px 20px;background:#12384b;color:white}h1{font-size:20px;margin:0 0 4px}header p{font-size:13px;margin:0;color:#d1e4eb}.controls{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 20px;background:#f1f6f8}.controls label{font-weight:600}.controls select{padding:7px;max-width:100%}.controls span{font-size:12px;color:#465d6c}.map{flex:1;min-height:320px;background:#e7eef2}footer{font-size:12px;padding:9px 20px;background:#f7fafb}
 
 /* ---- Validation and context features ---- */
+.app{background:#fff}
 :focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .app-header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
@@ -50,7 +51,7 @@
 .well-response{margin:4px 0 10px}
 .well-response-note{font-size:11px;color:#5d6b75;margin-top:2px}
 .well-storm p{margin:2px 0 0;font-size:12px}
-.tour-card{position:absolute;left:16px;bottom:16px;width:min(360px,calc(100% - 32px));background:#fff;border:1px solid #cfd9df;border-radius:10px;box-shadow:0 6px 24px #0f2a3a33;padding:12px 14px;z-index:5}
+.tour-card{position:absolute;left:56px;top:12px;width:min(360px,calc(100% - 32px));background:#fff;border:1px solid #cfd9df;border-radius:10px;box-shadow:0 6px 24px #0f2a3a33;padding:12px 14px;z-index:5}
 .tour-card h2{font-size:16px;margin:0 0 6px;color:#12384b}
 .tour-progress{margin:0;font-size:11px;color:#5d6b75}
 .tour-buttons{display:flex;gap:8px;flex-wrap:wrap}

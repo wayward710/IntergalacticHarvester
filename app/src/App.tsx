@@ -262,13 +262,15 @@ export default function App() {
   const noDataRef = useRef<ImageryTileLayer | null>(null);
   const bondvilleRef = useRef<GraphicsLayer | null>(null);
   const tourButtonRef = useRef<HTMLButtonElement>(null);
+  const sideRef = useRef<HTMLElement>(null);
+  const homeExtentRef = useRef<__esri.Extent | null>(null);
   const [wellColorBy, setWellColorBy] = useState<WellColorBy>("response");
   const [selectedWell, setSelectedWell] = useState<string | null>(null);
   const [panel, setPanel] = useState<Panel>("seasonal");
   const [showNoData, setShowNoData] = useState(false);
   const [rasterSize, setRasterSize] = useState<number | null>(null);
   const [tourIndex, setTourIndex] = useState<number | null>(null);
-  const tourSaved = useRef<{ mode: DisplayMode; dateIndex: number; panel: Panel; wellColorBy: WellColorBy } | null>(null);
+  const tourSaved = useRef<{ mode: DisplayMode; dateIndex: number; panel: Panel; wellColorBy: WellColorBy; selectedWell: string | null } | null>(null);
   const urlRead = useRef(false);
 
   useEffect(() => {
@@ -672,8 +674,9 @@ export default function App() {
     const well = tourWell(validation.wells);
     const home = () => {
       const view = viewRef.current;
-      if (view && layerRef.current?.fullExtent) view.goTo(layerRef.current.fullExtent).catch(() => {});
+      if (view && homeExtentRef.current) view.goTo(homeExtentRef.current).catch(() => {});
       view?.closePopup();
+      sideRef.current?.scrollTo({ top: 0 });
     };
     return [
       { id: "intro", title: copy.tour.intro.title, text: copy.tour.intro.text(),
@@ -689,6 +692,10 @@ export default function App() {
       { id: "limits", title: copy.tour.limits.title, text: copy.tour.limits.text(),
         apply: () => {
           setPanel("bondville");
+          window.setTimeout(() => {
+            const side = sideRef.current, tabs = side?.querySelector(".tabs");
+            if (side && tabs) side.scrollTo({ top: tabs.getBoundingClientRect().top - side.getBoundingClientRect().top + side.scrollTop });
+          }, 50);
           const view = viewRef.current;
           view?.closePopup();
           view?.goTo({ target: new Point({ latitude: 40.05, longitude: -88.37 }), zoom: TOUR_ZOOM_BONDVILLE }).catch(() => {});
@@ -697,7 +704,7 @@ export default function App() {
   }, [validation, manifest, maxRainIndex, openWell]);
 
   const startTour = () => {
-    tourSaved.current = { mode, dateIndex, panel, wellColorBy };
+    tourSaved.current = { mode, dateIndex, panel, wellColorBy, selectedWell };
     setTourIndex(0);
   };
   const exitTour = useCallback(() => {
@@ -705,10 +712,12 @@ export default function App() {
     setTourIndex(null);
     if (saved) {
       setMode(saved.mode); setDateIndex(saved.dateIndex); setPanel(saved.panel); setWellColorBy(saved.wellColorBy);
+      setSelectedWell(saved.selectedWell);
     }
     tourSaved.current = null;
     viewRef.current?.closePopup();
-    tourButtonRef.current?.focus();
+    // The button is disabled while the tour runs; focus it after it re-enables.
+    window.setTimeout(() => tourButtonRef.current?.focus(), 0);
   }, []);
   const tourOnLimits = tourIndex !== null && tourSteps[tourIndex]?.id === "limits";
 
@@ -770,6 +779,7 @@ export default function App() {
       // Zoom only on first successful raster; changing dates should not reset the user's view.
       if (!hasZoomed.current && layer.fullExtent) {
         hasZoomed.current = true;
+        homeExtentRef.current = layer.fullExtent.clone();
         view.goTo(layer.fullExtent).catch(() => {});
       }
     }).catch((error: unknown) => {
@@ -882,7 +892,7 @@ export default function App() {
             <span>{activeMode === "change" ? "Wetter (+0.2)" : activeMode === "precipitation" ? "6+" : "Wetter (0.6)"}</span>
           </span>
           <span>{activeMode === "precipitation" ? "inches (approximate)" : "m³/m³"}</span>
-          {showNoData && <span><span aria-hidden="true" className="swatch" style={{ background: "rgb(128,128,128)" }} /> {copy.coverageLegend}</span>}
+          {showNoData && <span><span aria-hidden="true" className="swatch" style={{ background: "rgb(128,128,128)", width: 12, height: 12 }} /> {copy.coverageLegend}</span>}
           {activeMode === "precipitation" && precipitationError &&
             <span role="alert">Precipitation manifest error: {precipitationError}</span>}
         </section>
@@ -896,7 +906,7 @@ export default function App() {
       </section>
       <div className="main">
         <div ref={container} className="map" />
-        <aside className="side" id="side-panel" aria-label="Validation and context">
+        <aside className="side" id="side-panel" aria-label="Validation and context" ref={sideRef}>
           {validation ? <>
             <IntervalCard intervals={validation.intervals.intervals} selected={intervalEntry} changeEps={validation.intervals.change_eps}
               onSelectInterval={(to) => { const i = manifest?.acquisitions.findIndex((a) => a.date === to) ?? -1; if (i >= 0) setDateIndex(i); }} />
