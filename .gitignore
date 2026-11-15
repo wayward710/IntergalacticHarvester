@@ -17,8 +17,6 @@ __pycache__/
 telemetry_2026.csv
 
 # Generated geospatial rasters (keep production COGs in object storage)
-*.tif
-*.tiff
 *.vrt
 *.aux.xml
 
