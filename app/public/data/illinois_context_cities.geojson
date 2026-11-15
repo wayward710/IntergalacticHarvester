@@ -1,0 +1,96 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Peoria"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.589,
+          40.6936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bloomington-Normal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.991,
+          40.492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Champaign-Urbana"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.226,
+          40.1164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Decatur"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.9548,
+          39.8403
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mahomet"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.4042,
+          40.1953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Clinton"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.9645,
+          40.1536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Monticello"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.5734,
+          40.0278
+        ]
+      }
+    }
+  ]
+}

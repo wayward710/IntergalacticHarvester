@@ -1,0 +1,875 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.378989,
+          40.12015
+        ]
+      },
+      "properties": {
+        "well": "CHAM-07-01A",
+        "network": "ILLINOIS AMERICAN CHAMPAIGN",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 325.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.981086,
+          40.385122
+        ]
+      },
+      "properties": {
+        "well": "CHAM-08-02A",
+        "network": "ILLINOIS AMERICAN CHAMPAIGN",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 315.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 3,
+        "nisar_valid_date_list": "2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.355681,
+          40.281578
+        ]
+      },
+      "properties": {
+        "well": "CHAM-08-09A",
+        "network": "ILLINOIS AMERICAN CHAMPAIGN",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 345.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.271916,
+          40.32604
+        ]
+      },
+      "properties": {
+        "well": "CHAM-20-01",
+        "network": "ILLINOIS AMERICAN CHAMPAIGN",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 320.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 4,
+        "nisar_valid_date_list": "2026-07-14, 2026-08-31, 2026-09-24, 2026-10-18",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.42634,
+          40.113091
+        ]
+      },
+      "properties": {
+        "well": "CHM-95D",
+        "network": "MAHOMET EAST",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 330.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.845557,
+          40.741113
+        ]
+      },
+      "properties": {
+        "well": "IRO-98C",
+        "network": "MAHOMET EAST",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 182.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.292106,
+          40.178759
+        ]
+      },
+      "properties": {
+        "well": "ISWS - E",
+        "network": "NORTHERN LOGAN COUNTY",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 210.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 4,
+        "nisar_valid_date_list": "2026-07-14, 2026-08-31, 2026-09-24, 2026-10-18",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.479658,
+          40.409676
+        ]
+      },
+      "properties": {
+        "well": "MTH-08",
+        "network": "MCTAZ",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 256.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.294975,
+          40.485417
+        ]
+      },
+      "properties": {
+        "well": "MTH-09",
+        "network": "MCTAZ",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 296.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.23691,
+          40.427332
+        ]
+      },
+      "properties": {
+        "well": "MTH-15",
+        "network": "MCTAZ",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 315.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.171143,
+          40.355542
+        ]
+      },
+      "properties": {
+        "well": "MTH-21",
+        "network": "MCTAZ",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 325.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 4,
+        "nisar_valid_date_list": "2026-07-14, 2026-08-31, 2026-09-24, 2026-10-18",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.365166,
+          40.316883
+        ]
+      },
+      "properties": {
+        "well": "MTH-22A",
+        "network": "NORTHERN LOGAN COUNTY",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 237.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.365089,
+          40.316884
+        ]
+      },
+      "properties": {
+        "well": "MTH-22B",
+        "network": "NORTHERN LOGAN COUNTY",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 157.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.782457,
+          40.456421
+        ]
+      },
+      "properties": {
+        "well": "MTOW-13",
+        "network": "IMPERIAL VALLEY",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "UNCONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 82.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.860246,
+          40.06917
+        ]
+      },
+      "properties": {
+        "well": "OB-W1",
+        "network": "MAHOMET CENTRAL-DECATUR",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 296.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.803453,
+          40.067233
+        ]
+      },
+      "properties": {
+        "well": "OW-1",
+        "network": "MAHOMET CENTRAL-DECATUR",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 260.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 5,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-26, 2026-08-19, 2026-09-12, 2026-10-06",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.866601,
+          40.302882
+        ]
+      },
+      "properties": {
+        "well": "VERM-08-01A",
+        "network": "ILLINOIS AMERICAN CHAMPAIGN",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 244.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2616,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.251575,
+          40.298122
+        ]
+      },
+      "properties": {
+        "well": "CHAM-09-03A",
+        "network": "ILLINOIS AMERICAN CHAMPAIGN",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 308.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2615,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 4,
+        "nisar_valid_date_list": "2026-07-14, 2026-08-31, 2026-09-24, 2026-10-18",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.188527,
+          40.3843
+        ]
+      },
+      "properties": {
+        "well": "ISWS - B",
+        "network": "MCTAZ",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 315.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2615,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 4,
+        "nisar_valid_date_list": "2026-07-14, 2026-08-31, 2026-09-24, 2026-10-18",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.714869,
+          40.232215
+        ]
+      },
+      "properties": {
+        "well": "MTOW-15A",
+        "network": "IMPERIAL VALLEY",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 227.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2615,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 5,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-26, 2026-08-19, 2026-09-12, 2026-10-06",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.802895,
+          40.106333
+        ]
+      },
+      "properties": {
+        "well": "OB-N1",
+        "network": "MAHOMET CENTRAL-DECATUR",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 318.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2615,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 5,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-26, 2026-08-19, 2026-09-12, 2026-10-06",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.84133,
+          40.034907
+        ]
+      },
+      "properties": {
+        "well": "OB-W",
+        "network": "MAHOMET CENTRAL-DECATUR",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 284.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2615,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 5,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-26, 2026-08-19, 2026-09-12, 2026-10-06",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.559521,
+          40.053082
+        ]
+      },
+      "properties": {
+        "well": "PIAT-09-01A",
+        "network": "ILLINOIS AMERICAN CHAMPAIGN",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 321.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2614,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.64302,
+          40.396252
+        ]
+      },
+      "properties": {
+        "well": "MTOW-08",
+        "network": "IMPERIAL VALLEY",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "UNCONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 53.5,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2609,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 5,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-26, 2026-08-19, 2026-09-12, 2026-10-06",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.698935,
+          40.178817
+        ]
+      },
+      "properties": {
+        "well": "MTOW-14",
+        "network": "IMPERIAL VALLEY",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 215.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2604,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 5,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-26, 2026-08-19, 2026-09-12, 2026-10-06",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.707119,
+          40.039974
+        ]
+      },
+      "properties": {
+        "well": "PIA-2000A",
+        "network": "MAHOMET EAST",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 304.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2596,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.225998,
+          40.340223
+        ]
+      },
+      "properties": {
+        "well": "MTH-20",
+        "network": "MCTAZ",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 311.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 109,
+        "study_total_days": 109,
+        "study_observations": 2558,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 4,
+        "nisar_valid_date_list": "2026-07-14, 2026-08-31, 2026-09-24, 2026-10-18",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.078057,
+          40.307832
+        ]
+      },
+      "properties": {
+        "well": "CHAM-12-02A",
+        "network": "ILLINOIS AMERICAN CHAMPAIGN",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 280.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 88,
+        "study_total_days": 109,
+        "study_observations": 2111,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-09-27T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.234427,
+          40.307889
+        ]
+      },
+      "properties": {
+        "well": "ISWS - A",
+        "network": "MCTAZ",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 330.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 85,
+        "study_total_days": 109,
+        "study_observations": 1980,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-09-24T08:00:00Z",
+        "nisar_valid_dates": 4,
+        "nisar_valid_date_list": "2026-07-14, 2026-08-31, 2026-09-24, 2026-10-18",
+        "complete_nisar_coverage": false,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.85044,
+          40.098434
+        ]
+      },
+      "properties": {
+        "well": "OB-W2",
+        "network": "MAHOMET CENTRAL-DECATUR",
+        "aquifer": "MAHOMET",
+        "aquifer_type": "CONFINED",
+        "aquifer_class": "QUATERNARY SAND AND GRAVEL",
+        "well_depth": 321.0,
+        "depth_units": "not verified",
+        "measurement_frequency": "CONTINUOUS",
+        "study_days_with_data": 82,
+        "study_total_days": 109,
+        "study_observations": 1944,
+        "study_first_utc": "2026-07-02T00:00:00Z",
+        "study_last_utc": "2026-10-18T23:00:00Z",
+        "nisar_valid_dates": 9,
+        "nisar_valid_date_list": "2026-07-02, 2026-07-14, 2026-07-26, 2026-08-19, 2026-08-31, 2026-09-12, 2026-09-24, 2026-10-06, 2026-10-18",
+        "complete_nisar_coverage": true,
+        "screening_note": "Valid raster pixel, not necessarily recommended-quality observation. Date-proximity columns not used."
+      }
+    }
+  ]
+}
