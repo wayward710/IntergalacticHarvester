@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ArcGISMap from "@arcgis/core/Map.js";
 import MapView from "@arcgis/core/views/MapView.js";
 import ImageryTileLayer from "@arcgis/core/layers/ImageryTileLayer.js";
@@ -7,9 +7,36 @@ import RasterStretchRenderer from "@arcgis/core/renderers/RasterStretchRenderer.
 import Color from "@arcgis/core/Color.js";
 import AlgorithmicColorRamp from "@arcgis/core/rest/support/AlgorithmicColorRamp.js";
 import MultipartColorRamp from "@arcgis/core/rest/support/MultipartColorRamp.js";
+import GraphicsLayer from "@arcgis/core/layers/GraphicsLayer.js";
+import Graphic from "@arcgis/core/Graphic.js";
+import Point from "@arcgis/core/geometry/Point.js";
+import * as reactiveUtils from "@arcgis/core/core/reactiveUtils.js";
+import * as rasterFunctionUtils from "@arcgis/core/layers/support/rasterFunctionUtils.js";
+import type ClassBreaksRenderer from "@arcgis/core/renderers/ClassBreaksRenderer.js";
 import {
   type AcquisitionManifest, type PrecipitationManifest, type DisplayMode, formatDate, validateManifest, validatePrecipitationManifest,
 } from "./layers";
+import { type ValidationData, intervalKey, stormCounts, tourWell, useValidationData } from "./validationData";
+import { responseRenderer, wellResponseContent } from "./wellsResponse";
+import { copy, fmtChange, fmtPct, fmtRain } from "./copy";
+import IntervalCard from "./components/IntervalCard";
+import WellsLegend from "./components/WellsLegend";
+import SeasonalPanel from "./components/SeasonalPanel";
+import BondvillePanel from "./components/BondvillePanel";
+import LimitsPanel from "./components/LimitsPanel";
+import Tour, { type TourStep } from "./components/Tour";
+
+type Panel = "seasonal" | "bondville" | "limits";
+type WellColorBy = "response" | "coverage";
+const PANELS: { id: Panel; label: string }[] = [
+  { id: "seasonal", label: "Wells by season" },
+  { id: "bondville", label: "Ground check" },
+  { id: "limits", label: "Limits" },
+];
+const MODES: DisplayMode[] = ["moisture", "change", "precipitation"];
+const NO_DATA_GRAY = [128, 128, 128, 255]; // overlay colour for "no retrieval" pixels
+const TOUR_ZOOM_WELL = 11;      // map zoom when the tour opens a well
+const TOUR_ZOOM_BONDVILLE = 11; // map zoom when the tour shows the probe
 
 // A diverging ramp makes unchanged soil moisture visually neutral.
 // CSS legends below use the same anchor colors; intermediate interpolation may differ slightly.
@@ -227,6 +254,22 @@ export default function App() {
   const nisarDatesRef = useRef<string[]>([]);
   const selectedDateRef = useRef<string | undefined>(undefined);
   const [groundwaterError, setGroundwaterError] = useState<string | null>(null);
+  const { data: validation, error: validationError } = useValidationData();
+  const validationRef = useRef<ValidationData | null>(null);
+  validationRef.current = validation;
+  const selectedKeyRef = useRef<string | null>(null);
+  const coverageRendererRef = useRef<ClassBreaksRenderer | null>(null);
+  const noDataRef = useRef<ImageryTileLayer | null>(null);
+  const bondvilleRef = useRef<GraphicsLayer | null>(null);
+  const tourButtonRef = useRef<HTMLButtonElement>(null);
+  const [wellColorBy, setWellColorBy] = useState<WellColorBy>("response");
+  const [selectedWell, setSelectedWell] = useState<string | null>(null);
+  const [panel, setPanel] = useState<Panel>("seasonal");
+  const [showNoData, setShowNoData] = useState(false);
+  const [rasterSize, setRasterSize] = useState<number | null>(null);
+  const [tourIndex, setTourIndex] = useState<number | null>(null);
+  const tourSaved = useRef<{ mode: DisplayMode; dateIndex: number; panel: Panel; wellColorBy: WellColorBy } | null>(null);
+  const urlRead = useRef(false);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -348,13 +391,24 @@ export default function App() {
       },
       popupTemplate: {
         title: "ISWS well {well}",
-        content: (event: { graphic: __esri.Graphic }) => wellPopupContent(
-          event.graphic.attributes as Record<string, unknown>,
-          groundwaterRef.current,
-          nisarDatesRef.current,
-          selectedDateRef.current,
-          wellPropertiesRef.current,
-        ),
+        content: (event: { graphic: __esri.Graphic }) => {
+          const root = wellPopupContent(
+            event.graphic.attributes as Record<string, unknown>,
+            groundwaterRef.current,
+            nisarDatesRef.current,
+            selectedDateRef.current,
+            wellPropertiesRef.current,
+          );
+          const v = validationRef.current;
+          if (v) {
+            const name = String(event.graphic.attributes?.well ?? "");
+            root.insertBefore(
+              wellResponseContent(v.wells.wells.find((w) => w.well === name), v.wells, v.intervals.intervals, selectedKeyRef.current),
+              root.children[1] ?? null,
+            );
+          }
+          return root;
+        },
       },
     });
     // Geographic context: county outlines and a few city reference points.
@@ -423,6 +477,19 @@ export default function App() {
     // Order: raster below, aquifer outline and well points above.
     map.add(wells);
     wellsRef.current = wells;
+    coverageRendererRef.current = (wells.renderer as ClassBreaksRenderer | null) ?? null;
+    // Ground-check site: the USCRN soil moisture probe at Bondville.
+    const bondville = new GraphicsLayer({ title: copy.bondvilleMarker });
+    const probePoint = new Point({ latitude: 40.05, longitude: -88.37 });
+    bondville.addMany([
+      new Graphic({ geometry: probePoint, attributes: { bondville: true },
+        symbol: { type: "simple-marker", style: "square", color: [124, 58, 237, 1], size: 11, outline: { color: [255, 255, 255, 1], width: 1.5 } } }),
+      new Graphic({ geometry: probePoint, attributes: { bondville: true },
+        symbol: { type: "text", text: copy.bondvilleMarker, color: [76, 29, 149, 1], haloColor: [255, 255, 255, 1], haloSize: 1.5,
+          xoffset: 0, yoffset: -16, font: { size: 9, weight: "bold", family: "Arial" } } }),
+    ]);
+    map.add(bondville);
+    bondvilleRef.current = bondville;
     wells.load().catch((error: unknown) => console.error("ISWS wells failed to load:", error));
 
     boundaryRef.current = boundary;
@@ -439,13 +506,30 @@ export default function App() {
       },
     });
     viewRef.current = view;
+    // Clicking the probe marker opens the ground-check panel.
+    const clickHandle = view.on("click", (event) => {
+      view.hitTest(event, { include: [bondville] }).then((hit) => {
+        if (hit.results.length) setPanel("bondville");
+      }).catch(() => {});
+    });
+    // Track which well's popup is open, so the seasonal panel can draw that well's curve.
+    const popupHandle = reactiveUtils.watch(
+      () => view.popup?.selectedFeature,
+      (feature) => {
+        const name = feature?.layer === wells ? feature.attributes?.well : undefined;
+        if (typeof name === "string") setSelectedWell(name);
+      },
+    );
     return () => {
+      clickHandle.remove();
+      popupHandle.remove();
       viewRef.current = null;
       layerRef.current = null;
       boundaryRef.current = null;
       wellsRef.current = null;
       countiesRef.current = null;
       citiesRef.current = null;
+      bondvilleRef.current = null;
       view.destroy();
     };
   }, []);
@@ -507,6 +591,127 @@ export default function App() {
     };
   }, [acquisition, activeMode, change, precipitationInterval]);
 
+  const selKey = previous && acquisition ? intervalKey(previous.date, acquisition.date) : null;
+  selectedKeyRef.current = selKey;
+  const intervalEntry = validation?.intervals.intervals.find((i) => i.from === previous?.date && i.to === acquisition?.date) ?? null;
+  const maxRainIndex = validation && manifest
+    ? manifest.acquisitions.findIndex((a) => a.date === validation.intervals.intervals.find((i) => i.is_max_rain)?.to)
+    : -1;
+
+  // F2: colour wells by their response in the selected interval, or by NISAR coverage (original renderer).
+  useEffect(() => {
+    const wells = wellsRef.current;
+    if (!wells) return;
+    if (wellColorBy === "response" && validation) wells.renderer = responseRenderer(validation.wells, selKey);
+    else if (coverageRendererRef.current) wells.renderer = coverageRendererRef.current.clone();
+  }, [wellColorBy, validation, selKey]);
+
+  // F5: grey overlay of pixels with no retrieval, for the selected date (moisture) or interval (change/rain).
+  const noDataFile = activeMode === "moisture" ? acquisition?.file : change?.file;
+  useEffect(() => {
+    const view = viewRef.current;
+    if (!view?.map || !showNoData || !noDataFile) return;
+    const layer = new ImageryTileLayer({
+      url: new URL(`${import.meta.env.BASE_URL}data/${noDataFile}`, window.location.origin).href,
+      title: copy.coverageLegend,
+      opacity: 0.75,
+      rasterFunction: rasterFunctionUtils.colormap({
+        colormap: [[1, ...NO_DATA_GRAY]],
+        raster: rasterFunctionUtils.isNull({}),
+      }),
+    });
+    // Directly above the soil moisture raster, below outlines and wells.
+    view.map.add(layer, Math.min(view.map.layers.indexOf(layerRef.current!) + 1, view.map.layers.length));
+    noDataRef.current = layer;
+    return () => {
+      if (!view.destroyed) view.map?.remove(layer);
+      if (noDataRef.current === layer) noDataRef.current = null;
+      if (!layer.destroyed) layer.destroy();
+    };
+  }, [showNoData, noDataFile]);
+
+  const openWell = useCallback(async (name: string, zoom?: number) => {
+    const view = viewRef.current, wells = wellsRef.current;
+    if (!view || !wells) return;
+    await wells.load();
+    const result = await wells.queryFeatures({
+      where: `well = '${name.replace(/'/g, "''")}'`, returnGeometry: true, outFields: ["*"],
+    });
+    const feature = result.features[0];
+    if (!feature?.geometry) return;
+    if (zoom) await view.goTo({ target: feature.geometry, zoom }).catch(() => {});
+    setSelectedWell(name);
+    await view.openPopup({ features: [feature], location: feature.geometry as Point, shouldFocus: false });
+  }, []);
+
+  // F7: shareable link ?date=YYYYMMDD&mode=change&well=ID. Read once, then keep the URL in sync.
+  useEffect(() => {
+    if (urlRead.current || !manifest) return;
+    urlRead.current = true;
+    const params = new URLSearchParams(window.location.search);
+    const i = manifest.acquisitions.findIndex((a) => a.date === params.get("date"));
+    if (i >= 0) setDateIndex(i);
+    const m = params.get("mode");
+    if (m && (MODES as string[]).includes(m)) setMode(m as DisplayMode);
+    const w = params.get("well");
+    if (w) { setSelectedWell(w); openWell(w).catch(() => {}); }
+  }, [manifest, openWell]);
+  useEffect(() => {
+    if (!urlRead.current || !acquisition) return;
+    const params = new URLSearchParams();
+    params.set("date", acquisition.date);
+    params.set("mode", activeMode);
+    if (selectedWell) params.set("well", selectedWell);
+    window.history.replaceState(null, "", `${window.location.pathname}?${params.toString()}`);
+  }, [acquisition, activeMode, selectedWell]);
+
+  const tourSteps: TourStep[] = useMemo(() => {
+    if (!validation || !manifest || maxRainIndex < 0) return [];
+    const storm = validation.intervals.intervals.find((i) => i.is_max_rain)!;
+    const counts = stormCounts(validation.wells);
+    const well = tourWell(validation.wells);
+    const home = () => {
+      const view = viewRef.current;
+      if (view && layerRef.current?.fullExtent) view.goTo(layerRef.current.fullExtent).catch(() => {});
+      view?.closePopup();
+    };
+    return [
+      { id: "intro", title: copy.tour.intro.title, text: copy.tour.intro.text(),
+        apply: () => { setMode("moisture"); setDateIndex(0); home(); } },
+      { id: "storm", title: copy.tour.storm.title,
+        text: copy.tour.storm.text(validation.wells.storm_dates, fmtRain(storm.rain_in_mean), fmtChange(storm.change_mean)),
+        apply: () => { setMode("precipitation"); setDateIndex(maxRainIndex); home(); } },
+      { id: "wells", title: copy.tour.wells.title, text: copy.tour.wells.text(counts.n_beat, counts.n_hist, counts.n_rose),
+        apply: () => {
+          setMode("change"); setDateIndex(maxRainIndex); setWellColorBy("response"); setShowWells(true); setPanel("seasonal");
+          if (well) openWell(well, TOUR_ZOOM_WELL).catch(() => {});
+        } },
+      { id: "limits", title: copy.tour.limits.title, text: copy.tour.limits.text(),
+        apply: () => {
+          setPanel("bondville");
+          const view = viewRef.current;
+          view?.closePopup();
+          view?.goTo({ target: new Point({ latitude: 40.05, longitude: -88.37 }), zoom: TOUR_ZOOM_BONDVILLE }).catch(() => {});
+        } },
+    ];
+  }, [validation, manifest, maxRainIndex, openWell]);
+
+  const startTour = () => {
+    tourSaved.current = { mode, dateIndex, panel, wellColorBy };
+    setTourIndex(0);
+  };
+  const exitTour = useCallback(() => {
+    const saved = tourSaved.current;
+    setTourIndex(null);
+    if (saved) {
+      setMode(saved.mode); setDateIndex(saved.dateIndex); setPanel(saved.panel); setWellColorBy(saved.wellColorBy);
+    }
+    tourSaved.current = null;
+    viewRef.current?.closePopup();
+    tourButtonRef.current?.focus();
+  }, []);
+  const tourOnLimits = tourIndex !== null && tourSteps[tourIndex]?.id === "limits";
+
   useEffect(() => {
     const view = viewRef.current;
     if (!view || !view.map || !choice) return;
@@ -526,6 +731,8 @@ export default function App() {
 
     layer.load().then(async () => {
       if (cancelled || view.destroyed) return;
+      const info = layer.serviceRasterInfo;
+      setRasterSize(info ? info.width * info.height : null);
       layer.renderer = new RasterStretchRenderer({
         stretchType: "min-max",
         useGamma: false,
@@ -595,9 +802,15 @@ export default function App() {
           overflow-y: auto;
         }
       `}</style>
-      <header>
-        <h1>Mahomet Moisture Observatory</h1>
-        <p>NISAR L3 SME2 · surface soil moisture time series</p>
+      <header className="app-header">
+        <div>
+          <h1>Mahomet Moisture Observatory</h1>
+          <p>NISAR L3 SME2 · surface soil moisture time series</p>
+        </div>
+        <div className="header-buttons">
+          <button type="button" ref={tourButtonRef} onClick={startTour} disabled={!tourSteps.length || tourIndex !== null}>Guided tour</button>
+          <button type="button" onClick={() => setPanel("limits")} aria-controls="side-panel">{copy.limitsTitle}</button>
+        </div>
       </header>
       <section className="controls" style={{ display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center" }}>
         <label htmlFor="date">Acquisition date</label>
@@ -640,7 +853,19 @@ export default function App() {
             onChange={(event) => setShowWells(event.target.checked)} />
           Groundwater wells (30)
         </label>
-        <span role="status">{status}</span>
+        <label htmlFor="well-color">Color wells by</label>
+        <select id="well-color" value={wellColorBy} onChange={(event) => setWellColorBy(event.target.value as WellColorBy)}>
+          <option value="response">Response</option>
+          <option value="coverage">NISAR coverage</option>
+        </select>
+        <label style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+          <input type="checkbox" checked={showNoData} onChange={(event) => setShowNoData(event.target.checked)} />
+          {copy.coverageToggle}
+        </label>
+        <span role="status">{status}{activeMode === "moisture" && acquisition
+          ? ` · NISAR retrieval on ${rasterSize ? fmtPct(acquisition.valid_pixels / rasterSize) : "no data"}% of the area`
+          : intervalEntry ? ` · pixels valid on both dates: ${fmtPct(intervalEntry.valid_share)}% of the area` : ""}</span>
+        {validationError && <span role="alert">Validation panels unavailable: {validationError}</span>}
         {groundwaterError && <span role="alert">Groundwater charts unavailable: {groundwaterError}</span>}
       </section>
       {manifest && (
@@ -656,17 +881,49 @@ export default function App() {
                background: legendGradient(activeMode) }} />
             <span>{activeMode === "change" ? "Wetter (+0.2)" : activeMode === "precipitation" ? "6+" : "Wetter (0.6)"}</span>
           </span>
-          <span>{activeMode === "precipitation" ? "inches" : "m³/m³"}</span>
+          <span>{activeMode === "precipitation" ? "inches (approximate)" : "m³/m³"}</span>
+          {showNoData && <span><span aria-hidden="true" className="swatch" style={{ background: "rgb(128,128,128)" }} /> {copy.coverageLegend}</span>}
           {activeMode === "precipitation" && precipitationError &&
             <span role="alert">Precipitation manifest error: {precipitationError}</span>}
         </section>
       )}
       <section style={{ padding: "0.2rem 1rem", display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
-        <span><span aria-hidden="true" style={{ color: "#10b981" }}>●</span> 9 of 9 valid NISAR dates (16 wells)</span>
-        <span><span aria-hidden="true" style={{ color: "#f59e0b" }}>●</span> 3–8 valid NISAR dates (14 wells)</span>
-        <span style={{ fontSize: "0.85em" }}>Well markers are static; the selected NISAR date is highlighted on groundwater charts.</span>
+        {wellColorBy === "coverage" || !validation ? <>
+          <span><span aria-hidden="true" style={{ color: "#10b981" }}>●</span> 9 of 9 valid NISAR dates (16 wells)</span>
+          <span><span aria-hidden="true" style={{ color: "#f59e0b" }}>●</span> 3–8 valid NISAR dates (14 wells)</span>
+          <span style={{ fontSize: "0.85em" }}>Well markers are static; the selected NISAR date is highlighted on groundwater charts.</span>
+        </> : <WellsLegend data={validation.wells} intervalKey={selKey} isMaxRain={!!intervalEntry?.is_max_rain} />}
       </section>
-      <div ref={container} className="map" />
+      <div className="main">
+        <div ref={container} className="map" />
+        <aside className="side" id="side-panel" aria-label="Validation and context">
+          {validation ? <>
+            <IntervalCard intervals={validation.intervals.intervals} selected={intervalEntry} changeEps={validation.intervals.change_eps}
+              onSelectInterval={(to) => { const i = manifest?.acquisitions.findIndex((a) => a.date === to) ?? -1; if (i >= 0) setDateIndex(i); }} />
+            <div className="tabs" role="tablist" aria-label="Context panels">
+              {PANELS.map((p) => (
+                <button key={p.id} type="button" role="tab" id={`tab-${p.id}`} aria-selected={panel === p.id} aria-controls={`tabpanel-${p.id}`}
+                  tabIndex={panel === p.id ? 0 : -1} onClick={() => setPanel(p.id)}
+                  onKeyDown={(e) => {
+                    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+                    const k = PANELS.findIndex((q) => q.id === panel);
+                    const next = PANELS[(k + (e.key === "ArrowRight" ? 1 : PANELS.length - 1)) % PANELS.length];
+                    setPanel(next.id);
+                    document.getElementById(`tab-${next.id}`)?.focus();
+                  }}>{p.label}</button>
+              ))}
+            </div>
+            <div role="tabpanel" id={`tabpanel-${panel}`} aria-labelledby={`tab-${panel}`}>
+              {panel === "seasonal" && <SeasonalPanel data={validation.seasonality} selectedWell={selectedWell} />}
+              {panel === "bondville" && <BondvillePanel data={validation.bondville} appDates={manifest?.acquisitions.map((a) => a.date) ?? []} />}
+              {panel === "limits" && <LimitsPanel stormDates={validation.wells.storm_dates} />}
+            </div>
+            {tourOnLimits && panel !== "limits" && <LimitsPanel stormDates={validation.wells.storm_dates} />}
+          </> : <p className="panel">{validationError ? `Validation panels unavailable: ${validationError}` : "Loading validation data…"}</p>}
+        </aside>
+        {tourIndex !== null && tourSteps.length > 0 &&
+          <Tour steps={tourSteps} index={tourIndex} onIndex={setTourIndex} onExit={exitTour} />}
+      </div>
       <footer>
         Soil moisture/change: m³/m³ (positive change = wetter), EPSG:6933. Precipitation: inches, EPSG:4326. MRMS intervals use UTC-midnight boundaries.
         {manifest && ` ${manifest.acquisitions.length} acquisitions · ${manifest.changes.length} intervals.`}
