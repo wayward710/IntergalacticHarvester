@@ -154,10 +154,3 @@ export function stormCounts(wells: WellsResponse) {
     n_rose: blocks.filter((s) => s.y2026_ft > 0).length,
   };
 }
-
-/** Rule for the tour: the well with the largest 2026 storm change among those above their typical range. */
-export function tourWell(wells: WellsResponse): string | null {
-  const above = wells.wells.filter((w) => w.storm?.above_typical_range);
-  if (!above.length) return null;
-  return above.reduce((a, b) => ((b.storm!.y2026_ft > a.storm!.y2026_ft) ? b : a)).well;
-}

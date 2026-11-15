@@ -4,10 +4,6 @@
 .app{background:#fff}
 :focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.app-header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.header-buttons{display:flex;gap:8px;flex-wrap:wrap}
-.header-buttons button{background:#fff;color:#12384b;border:1px solid #d1e4eb;border-radius:6px;padding:7px 12px;font-weight:600;cursor:pointer}
-.header-buttons button:disabled{opacity:.6;cursor:default}
 .main{flex:1;display:flex;min-height:0;position:relative}
 .main .map{flex:1;min-width:0}
 .side{width:380px;max-width:42vw;overflow-y:auto;background:#fbfcfc;border-left:1px solid #dbe3e8;padding:10px 12px 24px;font-size:13px}
@@ -43,7 +39,6 @@
 .data-table{width:100%;border-collapse:collapse;font-size:12px;margin:6px 0}
 .data-table th,.data-table td{border-bottom:1px solid #e1e5e8;padding:3px 4px;text-align:right}
 .data-table th:first-child{text-align:left}
-.limits{padding-left:18px;margin:0;display:grid;gap:6px}
 .wells-legend{font-size:12px}
 .wells-legend ul{list-style:none;display:flex;flex-wrap:wrap;gap:4px 14px;padding:0;margin:2px 0}
 .wells-legend .glyph{font-size:14px;margin-right:3px}
@@ -51,15 +46,10 @@
 .well-response{margin:4px 0 10px}
 .well-response-note{font-size:11px;color:#5d6b75;margin-top:2px}
 .well-storm p{margin:2px 0 0;font-size:12px}
-.tour-card{position:absolute;left:56px;top:12px;width:min(360px,calc(100% - 32px));background:#fff;border:1px solid #cfd9df;border-radius:10px;box-shadow:0 6px 24px #0f2a3a33;padding:12px 14px;z-index:5}
-.tour-card h2{font-size:16px;margin:0 0 6px;color:#12384b}
-.tour-progress{margin:0;font-size:11px;color:#5d6b75}
-.tour-buttons{display:flex;gap:8px;flex-wrap:wrap}
-.tour-buttons button,.controls button{padding:6px 12px;border-radius:6px;border:1px solid #a9bac5;background:#fff;cursor:pointer}
+.controls button{padding:6px 12px;border-radius:6px;border:1px solid #a9bac5;background:#fff;cursor:pointer}
 @media (max-width:820px){
   .app{height:auto;min-height:100vh}
   .main{flex-direction:column}
   .main .map{min-height:60vh}
   .side{width:auto;max-width:none;border-left:0;border-top:1px solid #dbe3e8}
-  .tour-card{position:fixed}
-}
+  }

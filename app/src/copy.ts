@@ -43,32 +43,4 @@ export const copy = {
   bondvilleCaption: (n: number, gap: string, aboveOrBelow: string) =>
     `The probe measures one point at 5 to 10 cm. NISAR averages a 200 m pixel of the top few centimeters. On the ${n} dates with a NISAR retrieval, NISAR reads ${gap} m³/m³ ${aboveOrBelow} the probe on average. With so few dates we cannot say which is closer to the truth.`,
   bondvilleNoRetrieval: "no retrieval",
-
-  coverageToggle: "Show where NISAR has no data",
-  coverageLegend: "no retrieval",
-
-  limitsTitle: "What we can and cannot say",
-  limits: (stormDates: string) => [
-    "We show what NISAR observed. We do not predict soil moisture.",
-    "Pixels with no retrieval on either date are left out of every average, and the share of the area covered is shown beside each one.",
-    "Rain totals come from MRMS radar and are approximate; hours with missing data count as zero.",
-    "NISAR and the ground probe differ at Bondville (a 200 m pixel against one point at 5 to 10 cm). Too few dates are valid to say which is closer to the truth.",
-    "Well levels follow a seasonal cycle and are also affected by human use we have no data for. We show patterns, not causes.",
-    `The largest storm (${stormDates}) stands out in the wells. Over the whole window, 2026 looked ordinary.`,
-    "The NISAR product used here is the L3 SME2 Provisional release and may change.",
-    "A weather-driven model tracks soil moisture well at a ground probe and for the large storm, but not ordinary NISAR changes, so it is not shown.",
-  ],
-
-  tour: {
-    intro: { title: "Mahomet Aquifer, summer 2026",
-      text: () => "Nine NISAR passes between Jul 2 and Oct 18 give eight intervals. Three stops: a storm, the wells, and the limits." },
-    storm: { title: "A big storm",
-      text: (stormDates: string, rain: string, change: string) =>
-        `From ${stormDates}, about ${rain} in of rain fell on average across the area (approximate). Where NISAR has a retrieval, mean soil moisture changed by ${change} m³/m³.` },
-    wells: { title: "Did the aquifer respond?",
-      text: (nBeat: number, nHist: number, nRose: number) =>
-        `${nBeat} of ${nHist} wells changed more than in a typical year over these dates, and ${nRose} rose. Surface wetness at a well did not predict how that well changed, so this shows a response, not a cause.` },
-    limits: { title: "What we cannot say",
-      text: () => "NISAR and a ground probe differ at Bondville, and wells have seasonal and human influences we cannot measure. Open the limits panel for the full list." },
-  },
 };
