@@ -190,7 +190,7 @@ function groundwaterChart(well: GroundwaterWell, dates: string[], selectedDate?:
   wrapper.appendChild(key);
   const note = document.createElement("div");
   note.className = "groundwater-chart-note";
-  note.textContent = "Units/datum unverified. Surface soil moisture is not a direct measure of confined groundwater recharge. Historical annual withdrawals cannot explain changes during individual satellite intervals.";
+  note.textContent = "Units/datum unverified. Surface soil moisture is not a direct measure of confined groundwater levels. Historical annual withdrawals cannot explain changes during individual satellite intervals.";
   wrapper.appendChild(note);
   return wrapper;
 }
