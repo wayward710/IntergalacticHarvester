@@ -1,4 +1,4 @@
-# Dancing with the SARs — Mahomet Moisture Observatory
+# Dancing with the SARs — AQUA-SAR
 
 **NASA Space Apps Challenge 2026 | Team Intergalactic Harvester**
 

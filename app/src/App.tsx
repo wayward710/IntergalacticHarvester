@@ -714,7 +714,7 @@ export default function App() {
         }
       `}</style>
       <header>
-        <h1>Mahomet Moisture Observatory</h1>
+        <h1>AQUA-SAR</h1>
         <p>NISAR L3 SME2 · surface soil moisture time series</p>
       </header>
       <section className="controls" style={{ display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center" }}>

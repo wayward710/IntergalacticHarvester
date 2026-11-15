@@ -1,4 +1,4 @@
-# Methodology — Mahomet Moisture Observatory
+# Methodology — AQUA-SAR
 
 ## 1. Fixed / Common-Footprint Soil Moisture Comparison
 Satellite SAR swaths vary slightly in valid pixel coverage across orbital passes due to retrieval quality flags, water masks, or swath edge geometry. Computing naive scene-wide averages on each acquisition date can introduce artificial shifts caused purely by changing spatial coverage.
