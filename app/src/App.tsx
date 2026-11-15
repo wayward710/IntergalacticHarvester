@@ -348,7 +348,7 @@ export default function App() {
       },
       popupTemplate: {
         title: "ISWS well {well}",
-        content: (event) => wellPopupContent(
+        content: (event: { graphic: __esri.Graphic }) => wellPopupContent(
           event.graphic.attributes as Record<string, unknown>,
           groundwaterRef.current,
           nisarDatesRef.current,
@@ -539,7 +539,7 @@ export default function App() {
       });
       console.log("Renderer:", layer.renderer?.toJSON());
       console.log("Custom statistics:", (layer.renderer as RasterStretchRenderer).customStatistics);
-      console.log("Raster info:", layer.rasterInfo?.toJSON() ?? "Not exposed on ImageryTileLayer");
+      console.log("Raster info:", layer.serviceRasterInfo?.toJSON() ?? "Not exposed on ImageryTileLayer");
       console.log("Layer type:", layer.type);
       console.log("Layer URL:", layer.url);
       console.log("Layer full extent:", layer.fullExtent?.toJSON());
