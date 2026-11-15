@@ -1,4 +1,4 @@
-# Mahomet Moisture Observatory
+# AQUA-SAR
 
 An interactive map exploring **surface soil moisture over the Mahomet Aquifer region of central Illinois**, alongside precipitation and groundwater monitoring locations. Built for the **NASA Space Apps Challenge 2026**.
 
