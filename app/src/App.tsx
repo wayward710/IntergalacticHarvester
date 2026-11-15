@@ -181,10 +181,6 @@ function groundwaterChart(well: GroundwaterWell, dates: string[], selectedDate?:
   key.className = "groundwater-chart-key";
   key.textContent = "Teal: groundwater";
   wrapper.appendChild(key);
-  const note = document.createElement("div");
-  note.className = "groundwater-chart-note";
-  note.textContent = "Units/datum unverified. Surface soil moisture is not a direct measure of confined groundwater levels. Historical annual withdrawals cannot explain changes during individual satellite intervals.";
-  wrapper.appendChild(note);
   return wrapper;
 }
 
@@ -786,7 +782,7 @@ export default function App() {
                background: legendGradient(activeMode) }} />
             <span>{activeMode === "change" ? "Wetter (+0.2)" : activeMode === "precipitation" ? "6+" : "Wetter (0.6)"}</span>
           </span>
-          <span>{activeMode === "precipitation" ? "inches (approximate)" : "m³/m³"}</span>
+          <span>{activeMode === "precipitation" ? "inches" : "m³/m³"}</span>
           {activeMode === "precipitation" && precipitationError &&
             <span role="alert">Precipitation manifest error: {precipitationError}</span>}
         </section>

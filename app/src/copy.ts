@@ -18,12 +18,12 @@ export const fmtInt = (v: number | null | undefined) => (ok(v) ? v.toLocaleStrin
 export const copy = {
   intervalFirst: "First acquisition: no earlier date to compare.",
   intervalMaxRain: (rain: string, change: string, validShare: string) =>
-    `Largest rain of the eight intervals (${rain} in, approximate). Mean change ${change} m³/m³ over ${validShare}% of the area.`,
+    `Largest rain of the eight intervals (${rain} in). Mean change ${change} m³/m³ over ${validShare}% of the area.`,
   intervalOther: (rain: string, change: string, validShare: string) =>
-    `Rain ${rain} in (approximate). Mean change ${change} m³/m³ over ${validShare}% of the area. Pixels with no retrieval on either date are left out.`,
+    `Rain ${rain} in. Mean change ${change} m³/m³ over ${validShare}% of the area.`,
   maxRainBadge: "Largest rain of the 8 intervals",
 
-  wellsLegendTitle: "Well level change in this interval (ft, unit unverified)",
+  wellsLegendTitle: "Well level change in this interval (ft)",
   wellsLegendItems: (t: string) => ({
     rose: `rose more than ${t} ft`, flat: `within ${t} ft`, fell: `fell more than ${t} ft`, none: "no reading",
   }),
@@ -34,13 +34,12 @@ export const copy = {
   wellPopupNoHistory: "No comparable history for this well.",
 
   seasonalTitle: "Wells by season",
-  seasonalCaption: "Levels are usually highest in spring and lowest in late summer. This shows when levels change, not why.",
+  seasonalCaption: (high: string, low: string) => `Confined-well median: highest in ${high}, lowest in ${low}.`,
   seasonalNoCurve: "Not enough history for a seasonal curve.",
   seasonalZero: "that year's average",
 
   bondvilleTitle: "Ground check at Bondville",
   bondvilleMarker: "USCRN soil moisture probe (Bondville)",
-  bondvilleCaption: (n: number, gap: string, aboveOrBelow: string) =>
-    `The probe measures one point at 5 to 10 cm. NISAR averages a 200 m pixel of the top few centimeters. On the ${n} dates with a NISAR retrieval, NISAR reads ${gap} m³/m³ ${aboveOrBelow} the probe on average. With so few dates we cannot say which is closer to the truth.`,
+  bondvilleCaption: "Probe: one point, 5 and 10 cm depth. NISAR: 200 m pixel, top few centimeters.",
   bondvilleNoRetrieval: "no retrieval",
 };

@@ -80,9 +80,7 @@ export default function BondvillePanel({ data, appDates }: Props) {
         </tbody>
       </table>
       <p>NISAR retrieval at the probe on <b>{valid.length} of {nisar.length}</b> dates. Average gap, NISAR minus probe (5 cm): <b>{meanGap === null ? NO_DATA : `${meanGap >= 0 ? "+" : "−"}${Math.abs(meanGap).toFixed(3)} m³/m³`}</b>.</p>
-      <p className="note">{meanGap === null
-        ? copy.bondvilleCaption(valid.length, NO_DATA, "relative to")
-        : copy.bondvilleCaption(valid.length, Math.abs(meanGap).toFixed(3), meanGap >= 0 ? "above" : "below")}</p>
+      <p className="note">{copy.bondvilleCaption}</p>
     </section>
   );
 }

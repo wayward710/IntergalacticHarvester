@@ -12,7 +12,7 @@ type Props = {
 type Row = { title: string; unit: string; value: (i: IntervalSummaryEntry) => number | null; format: (v: number | null) => string; diverging: boolean };
 
 const ROWS: Row[] = [
-  { title: "Rain", unit: "in, approximate", value: (i) => i.rain_in_mean, format: fmtRain, diverging: false },
+  { title: "Rain", unit: "in", value: (i) => i.rain_in_mean, format: fmtRain, diverging: false },
   { title: "Mean change", unit: "m³/m³", value: (i) => i.change_mean, format: fmtChange, diverging: true },
 ];
 
@@ -68,7 +68,7 @@ export default function IntervalCard(props: Props) {
       {selected?.is_max_rain && <p className="badge">{copy.maxRainBadge}</p>}
       {selected ? (
         <dl className="facts">
-          <dt>Rain (approximate)</dt>
+          <dt>Rain</dt>
           <dd>{rain} in <span>hours of data {fmtInt(selected.rain_hours_available)} of {fmtInt(selected.rain_hours_expected)}</span></dd>
           <dt>Mean change</dt>
           <dd>{change} m³/m³ <span>over {fmtInt(selected.paired_pixels)} pixels valid on both dates ({share}% of the area)</span></dd>
@@ -86,7 +86,7 @@ export default function IntervalCard(props: Props) {
         </div>
       </div>
       <p className="sr-only">{selected
-        ? `${selected.label}: rain ${rain} inches, approximate; mean soil moisture change ${change} cubic metres per cubic metre over ${share} percent of the area.`
+        ? `${selected.label}: rain ${rain} inches; mean soil moisture change ${change} cubic metres per cubic metre over ${share} percent of the area.`
         : copy.intervalFirst}</p>
     </section>
   );

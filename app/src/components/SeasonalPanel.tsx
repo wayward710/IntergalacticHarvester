@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { WellSeasonality } from "../validationData";
 import { copy, fmtFt } from "../copy";
 
+const FULL_MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const UNCONFINED_COLOR = "#e66101";
 const SELECTED_COLOR = "#12384b";
@@ -32,7 +33,7 @@ export default function SeasonalPanel({ data, selectedWell }: Props) {
   return (
     <section className="panel" aria-labelledby="seasonal-title">
       <h2 id="seasonal-title">{copy.seasonalTitle}</h2>
-      <p className="note">{copy.seasonalCaption}</p>
+      <p className="note">{copy.seasonalCaption(FULL_MONTHS[peak], FULL_MONTHS[trough])}</p>
       <svg viewBox={`0 0 ${W} ${H}`} role="img" width="100%"
         aria-label={`Typical within-year level by month. Confined wells (${conf.wells.length}): median peaks in ${MONTHS[peak]} and is lowest in ${MONTHS[trough]}.`}>
         {ticks.map((t) => (
@@ -66,7 +67,7 @@ export default function SeasonalPanel({ data, selectedWell }: Props) {
           : <>{selectedWell}: {copy.seasonalNoCurve}</>}</li>}
         {!selectedWell && <li className="hint">Click a well on the map to draw its own curve.</li>}
       </ul>
-      <p className="readout" aria-live="polite">{focusMonth === null ? "Focus or hover a month for its values (ft, unit unverified)." : readout(focusMonth)}</p>
+      <p className="readout" aria-live="polite">{focusMonth === null ? "Focus or hover a month for its values (ft)." : readout(focusMonth)}</p>
     </section>
   );
 }

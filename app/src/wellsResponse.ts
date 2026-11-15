@@ -55,7 +55,7 @@ export function wellResponseContent(well: WellResponse | undefined, data: WellsR
     return root;
   }
   const heading = document.createElement("strong");
-  heading.textContent = "Change in each interval (ft, unit unverified)";
+  heading.textContent = "Change in each interval (ft)";
   root.appendChild(heading);
 
   const W = 340, H = 118, left = 34, right = 6, gap = 3;
@@ -96,7 +96,7 @@ export function wellResponseContent(well: WellResponse | undefined, data: WellsR
   root.appendChild(svg);
   const rainNote = document.createElement("div");
   rainNote.className = "well-response-note";
-  rainNote.textContent = `Blue-gray bars: area-average rain per interval, approximate (largest ${fmtRain(maxRain)} in). Boxed: selected interval.`;
+  rainNote.textContent = `Blue-gray bars: area-average rain per interval (largest ${fmtRain(maxRain)} in). Boxed: selected interval.`;
   root.appendChild(rainNote);
 
   const storm = document.createElement("div");
