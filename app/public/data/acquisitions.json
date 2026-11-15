@@ -1,0 +1,103 @@
+{
+  "crs": "EPSG:6933",
+  "units": "m3/m3",
+  "nodata": -9999.0,
+  "quality": "recommended retrieval: bit 0 clear; 0<=SM<=0.6",
+  "acquisitions": [
+    {
+      "date": "20260702",
+      "file": "nisar_sm_20260702.tif",
+      "valid_pixels": 1009970
+    },
+    {
+      "date": "20260714",
+      "file": "nisar_sm_20260714.tif",
+      "valid_pixels": 977883
+    },
+    {
+      "date": "20260726",
+      "file": "nisar_sm_20260726.tif",
+      "valid_pixels": 1007786
+    },
+    {
+      "date": "20260819",
+      "file": "nisar_sm_20260819.tif",
+      "valid_pixels": 983549
+    },
+    {
+      "date": "20260831",
+      "file": "nisar_sm_20260831.tif",
+      "valid_pixels": 978014
+    },
+    {
+      "date": "20260912",
+      "file": "nisar_sm_20260912.tif",
+      "valid_pixels": 1052889
+    },
+    {
+      "date": "20260924",
+      "file": "nisar_sm_20260924.tif",
+      "valid_pixels": 1055007
+    },
+    {
+      "date": "20261006",
+      "file": "nisar_sm_20261006.tif",
+      "valid_pixels": 1076993
+    },
+    {
+      "date": "20261018",
+      "file": "nisar_sm_20261018.tif",
+      "valid_pixels": 1058921
+    }
+  ],
+  "changes": [
+    {
+      "from": "20260702",
+      "to": "20260714",
+      "file": "nisar_sm_change_20260702_20260714.tif",
+      "paired_pixels": 819966
+    },
+    {
+      "from": "20260714",
+      "to": "20260726",
+      "file": "nisar_sm_change_20260714_20260726.tif",
+      "paired_pixels": 821652
+    },
+    {
+      "from": "20260726",
+      "to": "20260819",
+      "file": "nisar_sm_change_20260726_20260819.tif",
+      "paired_pixels": 980221
+    },
+    {
+      "from": "20260819",
+      "to": "20260831",
+      "file": "nisar_sm_change_20260819_20260831.tif",
+      "paired_pixels": 816260
+    },
+    {
+      "from": "20260831",
+      "to": "20260912",
+      "file": "nisar_sm_change_20260831_20260912.tif",
+      "paired_pixels": 831024
+    },
+    {
+      "from": "20260912",
+      "to": "20260924",
+      "file": "nisar_sm_change_20260912_20260924.tif",
+      "paired_pixels": 871328
+    },
+    {
+      "from": "20260924",
+      "to": "20261006",
+      "file": "nisar_sm_change_20260924_20261006.tif",
+      "paired_pixels": 882098
+    },
+    {
+      "from": "20261006",
+      "to": "20261018",
+      "file": "nisar_sm_change_20261006_20261018.tif",
+      "paired_pixels": 884543
+    }
+  ]
+}
