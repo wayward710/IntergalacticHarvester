@@ -27,3 +27,6 @@ telemetry_2026.csv
 .DS_Store
 Thumbs.db
 .vscode/
+
+# TypeScript build cache
+*.tsbuildinfo
