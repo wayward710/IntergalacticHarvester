@@ -9,9 +9,17 @@ The map combines:
 - **NOAA MRMS** accumulated precipitation between acquisitions (inches).
 - The **Mahomet Aquifer boundary**, Illinois county/city reference features, and **30 candidate Illinois State Water Survey (ISWS) groundwater wells**.
 
+## Key Features
+
+- **Satellite soil-moisture mapping:** Explore NISAR surface soil-moisture observations across nine acquisition dates.
+- **Temporal change detection:** Compare consecutive acquisitions to identify areas becoming wetter or drier.
+- **Precipitation analysis:** Visualize accumulated MRMS rainfall between satellite acquisition dates.
+- **Groundwater geographic exploration:** Explore 30 ISWS candidate well locations and their satellite coverage.
+- **Interactive geographic exploration:** Navigate the Mahomet Aquifer region with county, city, and reference layers. 
+
 Use the date slider or Previous/Next buttons to move between satellite acquisitions. Choose **Soil moisture**, **Change from previous date**, or **Accumulated precipitation** from the Display menu. The first date has no preceding interval, so change and precipitation views start with the second acquisition. Checkboxes show or hide map reference layers. Click a well marker to inspect its metadata and satellite-coverage information.
 
-**Important:** NISAR measures near-surface soil moisture, *not* groundwater level. The well markers currently show locations and coverage metadata, not synchronized groundwater-level readings. Differences between surface moisture, precipitation, and groundwater cannot automatically be interpreted as cause and effect.
+**Important:** NISAR measures near-surface soil moisture (top 5 cm), *not* groundwater level. The well markers currently show monitoring locations and satellite coverage metadata, not synchronized groundwater-level readings. Trends between surface moisture, precipitation, and groundwater cannot automatically be interpreted as cause-and-effect relationships.
 
 ## Run it on your own Windows laptop
 
@@ -33,7 +41,7 @@ You do **not** need Python, GIS software, or a NASA account just to view the pre
 
 ### 2. Get the complete project folder
 
-Download the project as a ZIP from its GitHub repository (**Code → Download ZIP**) and extract it somewhere convenient, such as `Documents\mahomet-map-starter`. The repository is intended to include the complete prepared dataset, so no separate Google Drive download or data-processing step should be necessary. The maintainer should verify that all files have been committed before sharing the link.
+Download the project as a ZIP from its GitHub repository (**Code → Download ZIP**) and extract it somewhere convenient, such as `Documents\mahomet-map-starter`. The repository is intended to include the complete prepared dataset, so no separate Google Drive download or data-processing step should be necessary. 
 
 The folder should contain `package.json`, `src/`, and `public/data/`. In particular, `public/data/` must contain:
 
@@ -101,10 +109,6 @@ This application uses prepared data. Rebuilding the GeoTIFFs from source NISAR/M
 - The 30 wells were selected for monitoring-data availability and valid NISAR pixel coverage; the green/orange categories indicate **nine of nine** versus **partial** valid acquisition coverage, not groundwater conditions.
 - The interface is an exploratory visualization, not a groundwater prediction or aquifer recharge model.
 - The 25 prepared GeoTIFFs total approximately **79.15 MB** and are intended to be tracked in this repository. Avoid committing the much larger raw source products or repeatedly replacing generated rasters without a reason. Ensure `.gitignore` does **not** exclude `public/data/*.tif`.
-
-### Sharing checklist for the maintainer
-
-Before handing this to a teammate, verify that the GitHub ZIP contains `package.json`, the complete `src/` folder, all required manifests, **all 25 TIFF files**, and the four GeoJSON layers. Then test `npm install` and `npm run dev` from a freshly extracted ZIP. A repository without those data files is **not** a complete runnable package.
 
 ## Acknowledgments
 
